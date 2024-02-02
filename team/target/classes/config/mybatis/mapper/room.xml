@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="r">
+	
+	<!-- 객실 추가하기 -->
+	<insert id="room_insert" parameterType="room">
+		insert into board values(
+			SEQ_ROOM_NUM.NEXTVAL,,
+			#{bu_email},
+			#{ro_count},
+			#{ro_name},
+			#{ro_price},
+			#{checkIn},
+			#{checkOut},
+			#{ro_info},
+			#{photoSavePath}
+		)
+	</insert>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
