@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
+import dao.ReservationDAO;
 import dao.RoomDAO;
+import dto.ReservationDTO;
 import dto.RoomDTO;
 import lombok.RequiredArgsConstructor;
 import util.MyCommon;
@@ -22,13 +24,13 @@ import util.MyCommon;
 public class BusinessController {
 
 	
-	 @Autowired HttpServletRequest request;
-	 
-
-	int ro_num = 0;
+	@Autowired HttpServletRequest request;
 
 	@Autowired
 	final RoomDAO room_dao;
+	
+	@Autowired
+	final ReservationDAO res_dao;
 
 	@RequestMapping("addRoom_form")
 	public String addRoom_from() {
@@ -58,9 +60,11 @@ public class BusinessController {
 		return MyCommon.VIEW_PATH+"business/roomList.jsp";
 	}
 
-	@RequestMapping("reservation_confirm_form")
-	public String reservation_confirm_form() {
-		return MyCommon.VIEW_PATH + "business/reservation_confirm.jsp";
+	@RequestMapping("reservation_form")
+	public String reservation_form(Model model) {
+		List<ReservationDTO> list = res_dao.selectList();
+		model.addAttribute("list", list);
+		return MyCommon.VIEW_PATH+"business/reservation_confirm.jsp";
 	}
 
 	@RequestMapping("checkIn_form")
