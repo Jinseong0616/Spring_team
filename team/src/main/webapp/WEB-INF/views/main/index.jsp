@@ -46,7 +46,8 @@
 					<ul class="gnb d-flex align-items-center">
 						<li><a href="">지도검색</a></li>
 						<li><a href="">예약내역</a></li>
-						<li><a href="login_form">로그인<i class="bi bi-person-circle"></i></a></li>
+						<li><a href="login_form">로그인<i
+								class="bi bi-person-circle"></i></a></li>
 					</ul>
 				</div>
 			</div>
@@ -65,7 +66,7 @@
 				<h2 class="title">원하는 숙소를 찾아보세요</h2>
 				<div class="row g-0">
 					<div class="col">
-						<a href="view_roomList?bu_id=1"> <img src="resources/main_img/main_hotel.jpg" alt="">
+						<a href="#"> <img src="resources/main_img/main_hotel.jpg" alt="">
 							<div class="view">호텔</div>
 						</a>
 					</div>

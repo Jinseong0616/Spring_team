@@ -1,5 +1,7 @@
 package dao;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 
 import dto.RoomDTO;
@@ -16,8 +18,23 @@ public class RoomDAO {
 		return sqlSession.insert("r.room_insert",dto);
 	}
 	
-	//추가된 방 개수 구하기
-	public int count_room() {
-		return sqlSession.selectOne("r.room_count");
+	//방 전체조회
+	public List<RoomDTO> selectList() {
+		return sqlSession.selectList("r.room_select");
+	}
+	
+	//방 하나 조회
+	public RoomDTO selectOne(int ro_num) {
+		return sqlSession.selectOne("r.room_selectOne", ro_num);
+	}
+	
+	//객실 정보 수정
+	public int update(RoomDTO dto) {
+		return sqlSession.update("r.room_update",dto);
+	}
+	
+	//객실 삭제
+	public int delete(int num) {
+		return sqlSession.delete("r.room_delete",num);
 	}
 }

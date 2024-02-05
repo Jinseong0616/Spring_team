@@ -34,11 +34,4 @@ public class IndexController {
 		return MyCommon.VIEW_PATH+"main/login_form.jsp";
 	}
 	
-	@RequestMapping("view_roomList")
-	public String view_roomList() {
-		
-		
-		return MyCommon.VIEW_PATH+"main/main_roomList.jsp";
-	}
-	
 }

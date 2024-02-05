@@ -9,12 +9,11 @@
 	</settings>
 	
 	<typeAliases>
-		<!-- <typeAlias type="dto.RoomDTO" alias="room"/> -->
-		
+		<typeAlias type="dto.RoomDTO" alias="room"/>		
 	</typeAliases>
 	
 	<mappers>
-		<!-- <mapper resource="config/mybatis/mapper/room.xml" /> -->
+		<mapper resource="config/mybatis/mapper/room.xml" />
 	</mappers>
 </configuration>
 
