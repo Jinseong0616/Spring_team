@@ -24,7 +24,7 @@ public class BusinessController {
 
 	int ro_num = 0;
 
-	@Autowired
+	
 	final RoomDAO room_dao;
 
 	@RequestMapping("addRoom_form")

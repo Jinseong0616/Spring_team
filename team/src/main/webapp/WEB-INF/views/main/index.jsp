@@ -70,13 +70,13 @@
 						</a>
 					</div>
 					<div class="col">
-						<a href=""><img src="resources/main_img/main_motel.webp" alt=""></a>
+						<a href="view_roomList?bu_id=2"><img src="resources/main_img/main_motel.webp" alt=""></a>
 					</div>
 					<div class="col">
-						<a href=""><img src="resources/main_img/main_pension.webp" alt=""></a>
+						<a href="view_roomList?bu_id=3"><img src="resources/main_img/main_pension.webp" alt=""></a>
 					</div>
 					<div class="col">
-						<a href=""><img src="resources/main_img/main_resort.jpg" alt=""></a>
+						<a href="view_roomList?bu_id=4"><img src="resources/main_img/main_resort.jpg" alt=""></a>
 					</div>
 				</div>
 			</div>

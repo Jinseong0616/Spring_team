@@ -1,5 +1,8 @@
 package com.korea.team;
 
+import java.util.List;
+import java.util.Locale;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -7,7 +10,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
+import dao.BusinessDAO;
+import dto.BusinessDTO;
 import lombok.RequiredArgsConstructor;
 import util.MyCommon;
 
@@ -15,7 +21,7 @@ import util.MyCommon;
 @RequiredArgsConstructor
 public class IndexController {
 
-//	final MemberDAO member_dao;
+	final BusinessDAO business_dao;
 	
 	@Autowired
 	HttpServletRequest request;
@@ -35,10 +41,12 @@ public class IndexController {
 	}
 	
 	@RequestMapping("view_roomList")
-	public String view_roomList() {
+	public String list(Model model, @RequestParam(value = "bu_id", required = false)int bu_id) {
 		
+		List<BusinessDTO> list = business_dao.selectList(bu_id);
+		model.addAttribute("list",list);
 		
-		return MyCommon.VIEW_PATH+"main/main_roomList.jsp";
+		return MyCommon.VIEW_PATH+"main/main_roomList.jsp?bu_id=" + bu_id;
 	}
 	
 }
