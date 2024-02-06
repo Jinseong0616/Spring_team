@@ -1,13 +1,27 @@
 @charset "UTF-8";
+@font-face {
+    font-family: 'YClover-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_231029@1.1/YClover-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+
 
 *{margin: 0; padding: 0; box-sizing: border-box;}
 ul,li,ol{list-style: none;}
 a{text-decoration: none;}
 
 
+
+
 section{margin-bottom:50px;}
 
 .title{text-align: center;}
+
+
+/* header */
 
 .header{
     height: 76px;
@@ -17,10 +31,25 @@ section{margin-bottom:50px;}
 
 .header h1{
     margin: 0;
-    text-align: center;}
+    text-align: center;
+    font-size: 26px;
+    font-family: 'YClover-Bold';
+    color: #A9E81F;
+}
 
 .header ul{
     margin: 0;
+    padding-right: 30px;
+}
+
+.header ul li{
+    font-size: 16px;
+}
+
+.header ul li a{
+    margin-left: 20px;
+    font-weight: 500;
+    color:rgb(43, 42, 41);
 }
 
 
@@ -32,6 +61,7 @@ section{margin-bottom:50px;}
     font-weight: 600;
     margin-bottom: 20px;
 }
+
 
 .category .row .col{
     position: relative;
@@ -55,14 +85,21 @@ section{margin-bottom:50px;}
 }
 
 
+.category .row .col a{
+    display: flex; justify-content: center;
+    align-items: center;
+}
+
+
+
+
 .category .row .col .view{
     position: absolute;
-    font-size: 30px;
+    font-size: 50px;
     font-weight: 500;
     color: white;
-    top: 42%;
-    right: 40%;
 }
+
 
 
 
@@ -71,3 +108,13 @@ section{margin-bottom:50px;}
     border-radius: 15px;
 }
 
+
+
+
+
+/* footer */
+
+.footer{
+    height: 400px;
+    background-color: #ddd;
+}

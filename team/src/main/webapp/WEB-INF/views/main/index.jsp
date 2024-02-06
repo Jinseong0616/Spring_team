@@ -19,7 +19,7 @@
 		<div class="container g-0">
 			<div class="row d-flex justify-content-between">
 				<div class="col d-flex justify-content-center align-items-center">
-					<h1 class="logo">LOGO</h1>
+					<h1 class="logo">여행갈래?</h1>
 				</div>
 				<div class="col-8"></div>
 				<div class="info col d-flex justify-content-between">
@@ -45,18 +45,28 @@
 				<h2 class="title">원하는 숙소를 찾아보세요</h2>
 				<div class="row g-0">
 					<div class="col">
-						<a href="view_roomList?bu_id=1"> <img src="resources/main_img/main_hotel.jpg" alt="">
-							<div class="view">호텔</div>
+						<a href="view_roomList?bu_id=1"> 
+							<img src="resources/main_img/main_hotel.jpg" alt="">
+							<span class="view">호텔</span>
 						</a>
 					</div>
 					<div class="col">
-						<a href="view_roomList?bu_id=2"><img src="resources/main_img/main_motel.webp" alt=""></a>
+						<a href="view_roomList?bu_id=2">
+							<img src="resources/main_img/main_motel.webp" alt="">
+							<span class="view">모텔</span>
+						</a>
 					</div>
 					<div class="col">
-						<a href="view_roomList?bu_id=3"><img src="resources/main_img/main_pension.webp" alt=""></a>
+						<a href="view_roomList?bu_id=3">
+							<img src="resources/main_img/main_pension.webp" alt="">
+							<span class="view">펜션</span>
+						</a>
 					</div>
 					<div class="col">
-						<a href="view_roomList?bu_id=4"><img src="resources/main_img/main_resort.jpg" alt=""></a>
+						<a href="view_roomList?bu_id=4">
+							<img src="resources/main_img/main_resort.jpg" alt="">
+							<span class="view">리조트</span>	
+						</a>
 					</div>
 				</div>
 			</div>
