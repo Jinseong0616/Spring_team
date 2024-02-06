@@ -13,26 +13,6 @@
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
 <link rel="stylesheet" href="resources/css/index.css">
-
-<style type="text/css">
-
-/*  .category .row .col::after{
-    content: "";
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background-color: rgba(0, 0, 0, 0.3);
-    border-radius: 15px;
-    pointer-events: none;
-    opacity: 1;
-}
-
-.category .row .col:hover::after{
-    opacity: 0;
-}   */
-
-
-</style>
 </head>
 <body>
 	<header class="header">
