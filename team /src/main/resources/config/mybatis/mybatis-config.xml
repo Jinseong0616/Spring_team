@@ -11,12 +11,13 @@
 	<typeAliases>
 		<typeAlias type="dto.RoomDTO" alias="room"/>
 		<typeAlias type="dto.MemberDTO" alias="member"/>
-		
+		<typeAlias type="dto.BusinessDTO" alias="business"/>		
 	</typeAliases>
 	
 	<mappers>
 		<mapper resource="config/mybatis/mapper/room.xml" />
 		<mapper resource="config/mybatis/mapper/member.xml" />
+		<mapper resource="config/mybatis/mapper/business.xml" />
 	</mappers>
 </configuration>
 

@@ -26,11 +26,6 @@ public class Servlet_Context implements WebMvcConfigurer {
 //		resolver.setSuffix(".jsp");
 //		return resolver;
 //	}
-	
-//	 @Bean
-//	 public IndexController indexController(MemberDAO memberDAO) {
-//		 return new IndexController(memberDAO);
-//	 }
 	 
 	 
 }
