@@ -10,8 +10,8 @@
 			var f = document.f;
 			var name = f.ro_name.value.trim();
 			var price = f.ro_price.value;
-			var checkin = f.checkin.value;
-			var checkout = f.checkout.value;
+			var checkin = f.checkIn.value;
+			var checkout = f.checkOut.value;
 			var count = f.ro_count.value;
 			var info = f.ro_info.value.trim();
 			//var picture = f.ropicture.value;
@@ -80,11 +80,11 @@
 			</tr>
 			<tr>
 				<th>체크인 시간</th>
-				<td><input type="time" name="checkin"></td>				
+				<td><input type="time" name="checkIn"></td>				
 			</tr>
 			<tr>
 				<th>체크아웃 시간</th>
-				<td><input type="time"  name="checkout"></td>				
+				<td><input type="time"  name="checkOut"></td>				
 			</tr>
 			<tr>
 				<th>최대 인원수</th>

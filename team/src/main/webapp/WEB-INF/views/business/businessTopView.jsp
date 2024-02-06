@@ -16,7 +16,7 @@
 	<div align="center">
 		<input type="button" value="객실등록" onclick="location.href='addRoom_form'">
 		<input type="button" value="객실정보" onclick="location.href='roomList_form'">
-		<input type="button" value="예약확인" onclick="location.href='reservation_form'">
+		<input type="button" value="예약확인" onclick="location.href='reservation_confirm_form'">
 		<input type="button" value="체크인" onclick="location.href='checkIn_form'">
 		<input type="button" value="체크아웃" onclick="location.href='checkOut_form'">
 		<input type="button" value="리뷰" onclick="location.href='review_form'">
