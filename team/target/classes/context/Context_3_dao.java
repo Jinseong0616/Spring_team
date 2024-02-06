@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import dao.BusinessDAO;
+import dao.MemberDAO;
 import dao.ReservationDAO;
 import dao.RoomDAO;
 
@@ -24,6 +25,10 @@ public class Context_3_dao {
 		return new ReservationDAO(sqlSession);
 	}
 	
+	@Bean
+	public MemberDAO memberDAO(SqlSession sqlSession) {
+		return new MemberDAO(sqlSession);
+	}
 	
 	@Bean
 	public BusinessDAO businessDAO(SqlSession sqlSession) {

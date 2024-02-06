@@ -36,7 +36,7 @@ public class IndexController {
 	
 	@RequestMapping("login_form")
 	public String login_form() {
-		return MyCommon.VIEW_PATH+"main/login_form.jsp";
+		return MyCommon.VIEW_PATH+"member/login_form.jsp";
 	}
 	
 	@RequestMapping("view_roomList")
