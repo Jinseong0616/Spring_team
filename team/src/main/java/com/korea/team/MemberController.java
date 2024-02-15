@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import dao.MemberDAO;
 import dto.MemberDTO;
 import lombok.RequiredArgsConstructor;
+import service.MailSendService;
 import util.MyCommon;
 
 @Controller
@@ -20,6 +21,9 @@ public class MemberController {
 	
 	@Autowired
 	HttpSession session;
+	
+	@Autowired
+	MailSendService mailService;
 	
 	@RequestMapping("login")
 	@ResponseBody
@@ -76,4 +80,46 @@ public class MemberController {
 		
 		return null;
 	}
+	@RequestMapping("pwd_modify")
+	public String pwd_modify() {
+		return MyCommon.VIEW_PATH + "member/member_email_authcode.jsp";
+	}
+	
+	@RequestMapping("m_email_authcode")
+	@ResponseBody
+	public String m_email_authcode(String m_email) {
+		MemberDTO dto = member_dao.selectOne(m_email);
+		
+		String code = mailService.m_email_authcode(m_email);
+		
+		if(dto == null) {
+			return "[{'result':'no'}]";
+		}
+		return "[{'result':'yes'}, {'auth':'"+code+"'}]";	
+	}
+	
+	@RequestMapping("authcode")
+	public String authcode(String m_email) {
+		return MyCommon.VIEW_PATH + "member/member_authcode.jsp?m_email="+m_email;
+	}
+	
+	@RequestMapping("m_pwd_modify")
+	public String m_pwd_modify(String m_email) {
+		return MyCommon.VIEW_PATH + "member/member_pwd_modify.jsp?m_email="+m_email;
+	}
+	
+	@RequestMapping("member_pwd_modify")
+	public String pwd_modify(String m_email, String m_pwd) {
+		  
+		
+		int res = member_dao.pwdModify(m_email, m_pwd);
+		
+		if(res > 0) {
+			return MyCommon.VIEW_PATH + "main/index.jsp";
+		}
+		return null;
+	}
+	
+	
+	
 }

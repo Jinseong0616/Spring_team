@@ -5,8 +5,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="r">
 
 	<!-- 객실 전체조회 -->
-	<select id="room_select" resultType="room">
-		SELECT * FROM ROOM ORDER BY RO_NUM DESC
+	<select id="room_list" resultType="room">
+		SELECT * FROM ROOM WHERE BU_EMAIL = #{bu_email} ORDER BY RO_NUM
 	</select>
 	
 	<!-- 객실 추가하기 -->

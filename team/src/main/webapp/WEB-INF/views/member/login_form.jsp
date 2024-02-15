@@ -5,64 +5,68 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script src="resources/js/HttpRequest.js"></script>
-<script type="text/javascript">
-	function send(f){
-		var m_email = f.m_email.value.trim();
-		var m_pwd = f.m_pwd.value.trim();
-		
-		
-		if(m_email ==''){
-			alert("이메일을 입력해주세요")
-			return;
-		}
-		if(m_pwd ==''){
-			alert("비밀번호를 입력해주세요")
-			return;
-		}
-		
-		var url="login";
-		var param = "m_email="+m_email+"&m_pwd="+encodeURIComponent(m_pwd);
-		
-		sendRequest(url,param, myCheck,"post");
-	}
-	
-	function myCheck(){
-		if(xhr.readyState == 4 && xhr.status == 200){
-			var data = xhr.responseText;
-			var json = (new Function('return' + data))();
-			
-			if(json[0].param == 'no_m_email'){
-				alert('아이디가 존재하지 않습니다.')
-			}else if(json[0].param == 'no_m_pwd'){
-				alert('비밀번호가 올바르지 않습니다.')
-			}else{
-				alert('로그인 성공')
-				location.href = "index";
-			}
-		}
-	}
-</script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+	<link rel="stylesheet" href="resources/css/header.css">
+	<link rel="stylesheet" href="resources/css/login_form.css">
 </head>
 <body>
-	<form>
-		<table border="1" align="center">
-			<caption>로그인</caption>
-			<tr>
-				<th>이메일</th>
-				<td><input name="m_email"></td>
-			</tr>
-			<tr>
-				<th>비밀번호</th>
-				<td><input name="m_pwd" type="password"></td>
-			</tr>
-			<tr>
-				<td colspan="2" align="center">
-					<input type="button" value="로그인" onclick="send(this.form)">
-					<input type="button" value="회원가입" onclick="location.href='member_insert_form'">
-				</td>
-			</tr>
-		</table>
-	</form>
+	
+	<jsp:include page="/WEB-INF/views/main/header.jsp"></jsp:include>
+	
+	
+		<main>
+			<div class="content">
+				<div class="inner">
+					<div class="logo-box">
+						<h1 class="logo"><a href="">여행갈래?</a></h1>
+					</div>
+					<div class="login-title">
+						<span class="line"></span>
+						<span class="caption">로그인/회원가입</span>
+					</div>
+					<div class="login-button-group">
+						<button class="btn kakao-login" onclick="kakaoLogin();">
+							<div class="btn_content">
+								<svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="#3C1E1E" viewBox="0 0 21 21">
+									<path fill="current" d="M10.5 3.217c4.514 0 8 2.708 8 6.004 0 3.758-4.045 6.184-8 5.892-1.321-.093-1.707-.17-2.101-.23-1.425.814-2.728 2.344-3.232 2.334-.325-.19.811-2.896.533-3.114-.347-.244-3.157-1.329-3.2-4.958 0-3.199 3.486-5.928 8-5.928Z">
+									</path>
+								</svg>
+								<span>카카오로 시작하기</span>
+							</div>
+						</button>
+
+						<button class="btn naver-login" id="naverIdLogin_loginButton">
+							<div class="btn_content" id="naverIdLogin_loginButton" href="javascript:void(0)">
+								<svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none" viewBox="0 0 21 21">
+									<path fill="#fff" d="M4 16.717h4.377V9.98l4.203 6.737H17v-13h-4.377v6.737l-4.16-6.737H4v13Z"></path>
+								</svg>
+								<span>네이버로 시작하기</span>
+							</div>
+						</button>
+
+						<button class="btn email-login" onclick="location.href='login_email';">
+							<div class="btn_content">
+								<i class="bi bi-envelope-fill"></i>								
+								<span>이메일로 시작하기</span>
+							</div>
+						</button>
+
+						<button class="btn business-login"  onclick="location.href='login_business';">
+							<div class="btn_content">								
+								<span>비즈니스 로그인/회원가입</span>
+							</div>
+						</button>
+
+					</div>
+				</div>
+			</div>
+		</main>
+	
+	
+	<script src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.2.js"
+		charset="utf-8">
+	</script>
+	<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+	<script type="text/javascript" src="resources/js/login_form.js"></script>
 </body>
 </html>

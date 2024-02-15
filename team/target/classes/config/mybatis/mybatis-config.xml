@@ -13,13 +13,15 @@
 		<typeAlias type="dto.ReservationDTO" alias="reservation"/>
 		<typeAlias type="dto.MemberDTO" alias="member"/>
 		<typeAlias type="dto.BusinessDTO" alias="business"/>
+		<typeAlias type="dto.SearchDTO" alias="search"/>
 	</typeAliases>
 	
 	<mappers>
 		<mapper resource="config/mybatis/mapper/room.xml" />
 		<mapper resource="config/mybatis/mapper/reservation.xml" />
-		<!--<mapper resource="config/mybatis/mapper/member.xml" />  -->
+		<mapper resource="config/mybatis/mapper/member.xml" />
 		<mapper resource="config/mybatis/mapper/business.xml" />
+		<mapper resource="config/mybatis/mapper/search.xml" />
 	</mappers>
 </configuration>
 

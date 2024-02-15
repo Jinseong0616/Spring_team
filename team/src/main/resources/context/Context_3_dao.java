@@ -9,6 +9,7 @@ import dao.BusinessDAO;
 import dao.MemberDAO;
 import dao.ReservationDAO;
 import dao.RoomDAO;
+import dao.SearchDAO;
 
 
 @Configuration
@@ -34,4 +35,11 @@ public class Context_3_dao {
 	public BusinessDAO businessDAO(SqlSession sqlSession) {
 		return new BusinessDAO(sqlSession);
 	}
+	
+	@Bean
+	public SearchDAO searchDAO(SqlSession sqlSession) {
+		return new SearchDAO(sqlSession);
+	}
+	
+	
 }

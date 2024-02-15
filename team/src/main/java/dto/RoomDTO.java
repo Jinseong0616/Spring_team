@@ -8,7 +8,8 @@ import lombok.Setter;
 @Getter
 @Setter
 public class RoomDTO {
-	private String ro_name, ro_price, checkIn, checkOut, ro_info, bu_email, photoSavePath;
+	private String ro_name, ro_price, checkin, checkout, ro_info, bu_email, ro_picture;
 	private int ro_num, ro_count;
-	private MultipartFile ropicture;
+	private int picture_count;
+	private MultipartFile ropicture[];
 }
