@@ -16,6 +16,34 @@
 	</properties>
 	<dependencies>
 			
+			<!-- javax.mail -->
+			<dependency>
+			    <groupId>com.sun.mail</groupId>
+			    <artifactId>javax.mail</artifactId>
+			    <version>1.6.1</version>
+			</dependency>
+	
+			<!-- commons-email -->
+			<dependency>
+			    <groupId>org.apache.commons</groupId>
+			    <artifactId>commons-email</artifactId>
+			    <version>1.5</version>
+			</dependency>
+	
+			<!-- javax.mail/mail 이메일 인증 라이브러리-->
+			<dependency>
+			    <groupId>javax.mail</groupId>
+			    <artifactId>mail</artifactId>
+			    <version>1.4.7</version>
+			</dependency>
+			
+			
+			<!-- spring-context-support -->
+			<dependency>
+			    <groupId>org.springframework</groupId>
+			    <artifactId>spring-context-support</artifactId>
+			    <version>5.1.20.RELEASE</version>
+			</dependency>
 			
 			
 			

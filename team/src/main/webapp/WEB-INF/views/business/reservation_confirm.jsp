@@ -7,7 +7,12 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script type="text/javascript">
-
+	function search(){
+		var searchbox = document.getElementById("reservationInfo").value
+		var searchtext = document.getElementById("searchText").value		
+		location.href='search_reservation?box='+searchbox+'&text='+searchtext
+		
+	}
 </script>
 </head>
 <body>
@@ -16,15 +21,14 @@
 	
 	<div align="center">
 		<div id="searchbox" align="right">
-			<select name="reservationInfo">
+			<select id="reservationInfo">
 			  <option value="">-- 선택하세요 --</option>
-			  <option value="roomName">방이름</option>
-			  <option value="reservatorName">예약자이름</option>
-			  <option value="checkIn">체크인</option>
-			  <option value="checkOut">체크아웃</option>
-			  <option value="reservationStatus">예약상태</option>
+			  <option value="ro_name">객실 이름</option>
+			  <option value="checkin_date">체크인</option>
+			  <option value="checkout_date">체크아웃</option>
+			  <option value="status">예약상태</option>
 			</select>
-			<input>
+			<input id="searchText">
 			<input type="button" value="검색" onclick="search()">
 		</div>
 		<table border="1">
@@ -33,7 +37,6 @@
 		    <th>이용인원수</th>
 		    <th>체크인</th>
 		    <th>체크아웃</th>
-		    <th>예약자이름</th>
 		    <th>핸드폰번호</th>
 		    <th>Email</th>
 		    <th>예약상태</th>
@@ -41,18 +44,15 @@
 		  <c:forEach items="${list}" var="dto">
 			  <tr>
 			    <td>${dto.ro_name}</td>
-			    <td>3</td>
+			    <td>${dto.re_people}</td>
 			    <td>${dto.checkin_date}</td>
-			    <td>${dto.checkout_datee}</td>
-			    <td>홍길동</td>
-			    <td>010-2222-2222</td>
+			    <td>${dto.checkout_date}</td>
+			    <td>${dto.m_tel}</td>
 			    <td>${dto.m_email}</td>
 			    <td>${dto.status}</td>
 			  </tr>
 		  </c:forEach>
-	
 		</table>
-
 	</div>
 </body>
 </html>

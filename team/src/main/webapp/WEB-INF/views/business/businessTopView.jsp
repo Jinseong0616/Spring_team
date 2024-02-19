@@ -13,7 +13,8 @@
 	</script>
 </head>
 <body>
-	<div align="center">
+	
+	<div align="center" style="margin-top: 10px;">
 		<input type="button" value="객실등록" onclick="location.href='addRoom_form'">
 		<input type="button" value="객실정보" onclick="location.href='roomList_form'">
 		<input type="button" value="예약확인" onclick="location.href='reservation_form'">

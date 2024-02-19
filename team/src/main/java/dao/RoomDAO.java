@@ -19,8 +19,8 @@ public class RoomDAO {
 	}
 	
 	//방 전체조회
-	public List<RoomDTO> selectList() {
-		return sqlSession.selectList("r.room_select");
+	public List<RoomDTO> selectList(String bu_email) {
+		return sqlSession.selectList("r.room_list",bu_email);
 	}
 	
 	//방 하나 조회
@@ -37,4 +37,8 @@ public class RoomDAO {
 	public int delete(int num) {
 		return sqlSession.delete("r.room_delete",num);
 	}
+	
+	
+	
+	
 }

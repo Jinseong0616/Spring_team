@@ -10,12 +10,20 @@
 	
 	<typeAliases>
 		<typeAlias type="dto.RoomDTO" alias="room"/>
-		<typeAlias type="dto.ReservationDTO" alias="reservation"/>	
+		<typeAlias type="dto.ReservationDTO" alias="reservation"/>
+		<typeAlias type="dto.MemberDTO" alias="member"/>
+		<typeAlias type="dto.BusinessDTO" alias="business"/>
+		<typeAlias type="dto.SearchDTO" alias="search"/>
+		<typeAlias type="dto.ReviewDTO" alias="review"/>
 	</typeAliases>
 	
 	<mappers>
 		<mapper resource="config/mybatis/mapper/room.xml" />
 		<mapper resource="config/mybatis/mapper/reservation.xml" />
+		<mapper resource="config/mybatis/mapper/member.xml" />
+		<mapper resource="config/mybatis/mapper/business.xml" />
+		<mapper resource="config/mybatis/mapper/search.xml" />
+		<mapper resource="config/mybatis/mapper/review.xml" />
 	</mappers>
 </configuration>
 

@@ -4,24 +4,9 @@
 ul,li,ol{list-style: none;}
 a{text-decoration: none;}
 
-
-section{margin-bottom:50px;}
+section{margin-bottom : 50px;} 
 
 .title{text-align: center;}
-
-.header{
-    height: 76px;
-}
-
-.header .col{height: 76px;}
-
-.header h1{
-    margin: 0;
-    text-align: center;}
-
-.header ul{
-    margin: 0;
-}
 
 
 /* category */
@@ -32,6 +17,7 @@ section{margin-bottom:50px;}
     font-weight: 600;
     margin-bottom: 20px;
 }
+
 
 .category .row .col{
     position: relative;
@@ -55,14 +41,21 @@ section{margin-bottom:50px;}
 }
 
 
+.category .row .col a{
+    display: flex; justify-content: center;
+    align-items: center;
+}
+
+
+
+
 .category .row .col .view{
     position: absolute;
-    font-size: 30px;
+    font-size: 50px;
     font-weight: 500;
     color: white;
-    top: 42%;
-    right: 40%;
 }
+
 
 
 
@@ -71,3 +64,13 @@ section{margin-bottom:50px;}
     border-radius: 15px;
 }
 
+
+
+
+
+/* footer */
+
+.footer{
+    height: 400px;
+    background-color: #ddd;
+}

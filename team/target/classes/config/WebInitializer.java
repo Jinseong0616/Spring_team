@@ -9,7 +9,9 @@ import context.Context_1_dataSource;
 import context.Context_2_mybatis;
 import context.Context_3_dao;
 import context.Context_4_fileupload;
+import context.MailAuthConfiguration;
 import mvc.Servlet_Context;
+import service.MailSendService;
 
 public class WebInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
 
@@ -20,14 +22,15 @@ public class WebInitializer extends AbstractAnnotationConfigDispatcherServletIni
 		return new Class[] {  Context_1_dataSource.class,
 							  Context_2_mybatis.class,
 							  Context_3_dao.class,
-							  Context_4_fileupload.class};
+							  Context_4_fileupload.class,
+							  MailAuthConfiguration.class};
 	}
 
 	
 
 	@Override
 	protected Class<?>[] getServletConfigClasses() {
-		return new Class[] { Servlet_Context.class };
+		return new Class[] { Servlet_Context.class,MailSendService.class };
 	}
 
 	// getServletMappings

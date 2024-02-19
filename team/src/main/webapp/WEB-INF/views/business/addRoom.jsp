@@ -14,7 +14,7 @@
 			var checkout = f.checkout.value;
 			var count = f.ro_count.value;
 			var info = f.ro_info.value.trim();
-			//var picture = f.ropicture.value;
+			var picture = f.ropicture.files.length;
 			
 			//alert(picture)
 			
@@ -58,6 +58,11 @@
 				return;
 			}
 			
+			if(picture <= 0){
+				alert("사진을 등록해주세요");
+				return;
+			}
+			
 			
 			
 			f.submit();
@@ -68,6 +73,7 @@
 	<jsp:include page="/WEB-INF/views/business/businessTopView.jsp"></jsp:include>
 	<div align="center">
 	<form action="addRoom" name="f" method="post" enctype="multipart/form-data">
+		<input type="hidden" name="picture_count" value="-1">
 		<table border="1">
 			<caption>:::객실 등록:::</caption>
 			<tr>
@@ -96,7 +102,7 @@
 			</tr>
 			<tr>
 				<th>사진등록</th>
-				<td><input name="ropicture" type="file"></td>
+				<td><input name="ropicture" type="file" multiple="multiple"></td>
 			</tr>
 			<tr>
 				<td colspan="2" align="center">
