@@ -5,8 +5,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="b">
 	
 	<select id="category" parameterType="int" resultType="business">
-		select *
-		from business where bu_id = #{bu_id}
+		SELECT DISTINCT B.*, MIN_PRICE
+		FROM BUSINESS B
+		JOIN BUSINESS_INFO_VIEW T ON B.BU_EMAIL = T.BU_EMAIL
+		WHERE B.BU_ID= #{bu_id}
 	</select>
 
 	<select id="loginCheck" parameterType="String"

@@ -27,10 +27,10 @@
 			<!-- <button>테스트 해보기2</button> -->
 			<button>
 			<div align="center" id="">
-				<img src="resources/room_img/room1.jpg" align="left">
+				<%-- <img src="/resources/business_img/${dto.bu_title}/${dto.ro_picture}" align="left"> --%>
 				<h2 id="roomName" align="center">${dto.bu_title}</h2>
-				<p align="center">이용인원 : 3</p>
-				<h2 align="center">30,000원</h2>
+				<p>${dto.bu_addr}</p>
+				<h3 align="center">가격 : ${dto.min_price}원~</h3>
 			</div>
 			</button>
 		</form>

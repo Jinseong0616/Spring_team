@@ -1,5 +1,6 @@
 package dao;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
@@ -12,15 +13,15 @@ public class SearchDAO {
 	
 	final SqlSession sqlSession;
 	
-	//조건에 맞는 방 검색
-	public List<SearchDTO> selectList(SearchDTO dto){
+	//조건에 맞는 방 검색 - 체크인, 체크아웃, 인원수, 숙소명 OR 지역명
+	public List<SearchDTO> selectList(HashMap<String,String> map){
+		System.out.println(map.get("checkin"));
+		System.out.println(map.get("checkout"));
+		System.out.println(map.get("count"));
+		System.out.println(map.get("txt"));
 		
-		return sqlSession.selectList("s.accommdation_list", dto);
+		return sqlSession.selectList("s.accommdation_list", map);
 	}
 	
-	//숙소 카테고리별 검색
-	public List<SearchDTO> selectList(int bu_id) {
-		return sqlSession.selectList("s.category",bu_id);
-	}
 	
 }

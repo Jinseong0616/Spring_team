@@ -4,10 +4,24 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="rv">
 
-	<!-- 객실 전체조회 -->
+	<!-- 예약 전체조회 -->
 	<select id="select" resultType="reservation">
 		SELECT * FROM RESERVATION
 	</select>
+	
+	<!-- 예약 검색 -->
+	<select id="search" parameterType="java.util.HashMap" resultType="reservation">
+		SELECT * FROM RESERVATION WHERE ${box} = #{text}
+	</select>
+	
+	<!-- 예약 상태 체크인으로 변경 -->
+	<update id="checkIn" parameterType="String">
+		UPDATE RESERVATION SET STATUS = '입실완료' WHERE RE_NUM = #{num}
+	</update>
+	
+	<update id="checkOut" parameterType="String">
+		UPDATE RESERVATION SET STATUS = '이용완료' WHERE RE_NUM = #{num}
+	</update>
 </mapper>
 
 

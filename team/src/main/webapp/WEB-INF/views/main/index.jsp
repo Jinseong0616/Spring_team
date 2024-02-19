@@ -16,7 +16,7 @@
 <link rel="stylesheet" href="resources/css/index.css">
 </head>
 <body>
-	
+
 
 	<jsp:include page="/WEB-INF/views/main/header.jsp"></jsp:include>
 
@@ -26,7 +26,15 @@
 				<img src="resources/main_img/main1.webp" alt="">
 			</div>
 			<form action="search" method="post">
-				<input name="" value="">
+				<input type="date" name="checkin" value=""> <input
+					type="date" name="checkout" value=""> <span>인원수</span> 
+					<select name="count" id="">
+						<option value="1">1</option>
+						<option value="2" selected>2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+					</select> 
+					<input type="text" name="txt" value="">
 				<button>검색</button>
 			</form>
 		</section>
@@ -36,27 +44,27 @@
 				<h2 class="title">원하는 숙소를 찾아보세요</h2>
 				<div class="row g-0">
 					<div class="col">
-						<a href="category?bu_id=1"> 
-							<img src="resources/main_img/main_hotel.jpg" alt="">
-							<span class="view">호텔</span>
+						<a href="category?bu_id=1"> <img
+							src="resources/main_img/main_hotel.jpg" alt=""> <span
+							class="view">호텔</span>
 						</a>
 					</div>
 					<div class="col">
-						<a href="category?bu_id=2">
-							<img src="resources/main_img/main_motel.webp" alt="">
-							<span class="view">모텔</span>
+						<a href="category?bu_id=2"> <img
+							src="resources/main_img/main_motel.webp" alt=""> <span
+							class="view">모텔</span>
 						</a>
 					</div>
 					<div class="col">
-						<a href="category?bu_id=3">
-							<img src="resources/main_img/main_pension.webp" alt="">
-							<span class="view">펜션</span>
+						<a href="category?bu_id=3"> <img
+							src="resources/main_img/main_pension.webp" alt=""> <span
+							class="view">펜션</span>
 						</a>
 					</div>
 					<div class="col">
-						<a href="category?bu_id=4">
-							<img src="resources/main_img/main_resort.jpg" alt="">
-							<span class="view">리조트</span>	
+						<a href="category?bu_id=4"> <img
+							src="resources/main_img/main_resort.jpg" alt=""> <span
+							class="view">리조트</span>
 						</a>
 					</div>
 				</div>

@@ -276,4 +276,45 @@ public class BusinessController {
 	public String change_string(String info) {
 		return info.replaceAll("\n", "<br>");
 	}
+	
+	//-----------------------비즈니스 사진등록 함수----------------------------------------
+	public BusinessDTO photo_upload(BusinessDTO dto) {
+		String webPath = "/resources/business_img/";
+		webPath = String.format("%s/%s/", webPath, dto.getBu_title());
+		String savePath = request.getServletContext().getRealPath(webPath);
+		
+		System.out.println(savePath);
+		
+		int picCount = dto.getPicture_count();
+		
+		for(int i = 0; i < dto.getBupicture().length; i++) {
+			System.out.println(i);
+			MultipartFile photo = dto.getBupicture()[i];
+			String fileName = "no_file";
+			
+			if(!photo.isEmpty()) {
+				fileName = dto.getBu_title() + "_" + (++picCount) + ".jpeg";
+				
+				File saveFile = new File(savePath, fileName);
+
+				if (!saveFile.exists()) {
+					saveFile.mkdirs();
+				} else {
+					saveFile.delete();
+					saveFile = new File(savePath, fileName);
+				}
+
+				try {
+					photo.transferTo(saveFile);
+				} catch (Exception e) {
+
+				}
+				dto.setBu_picture(fileName);
+				dto.setPicture_count(picCount);
+			}
+		}
+		return dto;
+	}
+	
+	
 }

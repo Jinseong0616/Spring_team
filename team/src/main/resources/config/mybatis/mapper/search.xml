@@ -3,32 +3,30 @@
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="s">
-	
+
 	<!-- 카테고리별 검색 -->
-	<select id="category" parameterType="int" resultType="search">
-		select *
-		from business where bu_id = #{bu_id}
-	</select>
-
-
+	<!-- <select id="category" parameterType="int" resultType="search">
+		SELECT DISTINCT B.*, MIN_PRICE
+		FROM BUSINESS B
+		JOIN BUSINESS_INFO_VIEW T ON B.BU_EMAIL = T.BU_EMAIL
+		WHERE B.BU_ID= #{bu_id};
+	</select> -->
 
 
 	<!-- 예약 가능한 숙박 시설 검색 -->
-	<select id="accommdation_list" resultType="search">
-		<![CDATA[
-		SELECT DISTINCT *
+	<select id="accommdation_list" parameterType="java.util.HashMap" resultType="search">
+		SELECT DISTINCT BU.BU_EMAIL,BU.BU_TITLE,BU.BU_ADDR,BU.BU_PICTURE,MIN_PRICE
 		FROM ROOM R
 		LEFT JOIN RESERVATION RV ON R.RO_NUM = RV.RO_NUM
 		JOIN BUSINESS BU ON R.BU_EMAIL = BU.BU_EMAIL
+		JOIN BUSINESS_INFO_VIEW T ON BU.BU_EMAIL = T.BU_EMAIL
 		WHERE (RV.RO_NUM IS NULL)
-		AND (R.CHECKIN >= TO_DATE(#{checkin}, 'YYYY-MM-DD'))
-		AND (R.CHECKOUT <= TO_DATE(#{checkout}, 'YYYY-MM-DD'))
-		AND (BU.BU_ADDR LIKE '%#{bu_addr}'%'
-		OR BU.BU_TITLE LIKE '%#{bu_title}'%')
-		AND (R.RO_COUNT >= #{ro_count})
-		]]>
+		AND (BU.BU_ADDR LIKE '%${txt}%'
+		OR BU.BU_TITLE LIKE '%${txt}%')
+		AND (R.RO_COUNT >= ${count})
+		
 	</select>
-	
+
 </mapper>
 
 
